@@ -7,7 +7,7 @@ import { domycategories, domyproducts, domysubCategories, flashSales } from "../
 
 
 // export const  baseURL = 'https://spany-djapp.onrender.com/'
-export const baseURL = 'http://192.168.92.47:8081/'
+export const baseURL = 'http://13.60.166.106'
 
 export const SPANYaxios = axios.create({
     baseURL: baseURL,
