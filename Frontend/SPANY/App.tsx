@@ -15,7 +15,6 @@ import PasswordRecoveryCode from './src/screens/PasswordRecoveryCode';
 import SetupPasswordScreen from './src/screens/SetupPasswordScreen';
 import HelloCardScreen from './src/screens/HelloCardScreen';
 import IntroductionScreen from './src/screens/IntroductionScreen';
-import { ColorMode } from './src/Themes/color';
 
 
 const Stack = createNativeStackNavigator();

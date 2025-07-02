@@ -62,8 +62,8 @@ class ForgetPasswordView(APIView):
 # ##########################
 class CategoryView(ListAPIView):
     """Fetch all product categories.Requires authentication."""
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 

@@ -6,6 +6,7 @@ import { dynamicFontSize, dynamicIconSize, dynamicMargin, dynamicPadding, Mode, 
 import { demo } from "../functionality/APICall";
 import { logout } from "../functionality/authentication";
 
+
 const SETTINGS_DATA = [
   { title: "Personal", items: [{ name: "Profile", screen: "SettingsProfileScreen" }, { name: "Shipping Address", screen: "SettingsShippingAddressScreen" }, { name: "Payment Methods", screen: "SettingsAddCardScreen" }] },
   { title: "Shop", items: [{ name: "Country", screen: "SettingsScreen" }, { name: "Currency", screen: "SettingsScreen" }, { name: "Sizes", screen: "SettingsScreen" }, { name: "Terms and Conditions", screen: "SettingsScreen" }] },

@@ -23,6 +23,9 @@ const PasswordScreen = ({ navigation }: PasswordScreenProps) => {
   useEffect(() => {
     if (userData?.user?.username) {
       setUsername(userData.user.username);
+      console.log(userData
+      );
+      
     }
   }, [userData]);
 

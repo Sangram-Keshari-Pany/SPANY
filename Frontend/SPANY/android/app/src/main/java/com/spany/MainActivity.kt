@@ -1,4 +1,3 @@
-
 package com.spany
 
 import com.facebook.react.ReactActivity

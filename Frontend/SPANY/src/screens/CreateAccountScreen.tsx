@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView, StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { userregistration } from '../functionality/authentication';
 import { dynamicWidth, dynamicBorderRadius, dynamicFontSize, dynamicPadding, Themes, dynamicMargin } from '../Themes/color';
 import CustomIcons from '../Themes/CustomIcons';
-import { useData } from '../functionality/APICall';
+import { baseURL, useData } from '../functionality/APICall';
 import { CreateScreenSvg } from '../Themes/SVGIcons';
 import Toast from 'react-native-toast-message';
 import { toastConfig } from '../Themes/CustomTost';
 import { ActivityIndicator } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
+import axios from 'axios';
 
 const CreateAccountScreen = ({ navigation }: any) => {
   const { fetchdata } = useData();
@@ -18,6 +19,13 @@ const CreateAccountScreen = ({ navigation }: any) => {
   const [phone, setPhone] = useState('');
   const [image, setImage]: any = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(()=>{
+    axios.get(`${baseURL}/category`)
+    .then((response)=>console.log(response))
+    .catch((err)=>console.log(err))
+    
+  },[])
 
   const openImagePicker = () => {
     launchImageLibrary({ mediaType: 'photo' }, (response: any) => {
@@ -95,11 +103,11 @@ const CreateAccountScreen = ({ navigation }: any) => {
               )}
             </TouchableOpacity>
           </View>
-          <TextInput style={styles.input} placeholder="Email" placeholderTextColor={Themes.color7} textContentType="emailAddress" keyboardType="email-address" onChangeText={setUsername} value={username} />
-          <TextInput placeholder="Password" placeholderTextColor={Themes.color7} style={styles.input} textContentType="password" secureTextEntry onChangeText={setPassword} value={password} />
+          <TextInput style={styles.input} placeholder="Email" placeholderTextColor={Themes.color7} textContentType="emailAddress" keyboardType="email-address" onChangeText={(text) => setUsername(text.trim().toLowerCase())} value={username} />
+          <TextInput placeholder="Password" placeholderTextColor={Themes.color7} style={styles.input} textContentType="password" secureTextEntry onChangeText={(text) => setPassword(text.trim())} value={password} />
           <View style={styles.phoneInputContainer}>
             <Image source={{ uri: 'https://flagcdn.com/w320/in.png' }} style={styles.flag} />
-            <TextInput style={styles.phoneInput} placeholder="Your number" placeholderTextColor={Themes.color7} textContentType="telephoneNumber" keyboardType="phone-pad" onChangeText={setPhone} value={phone} />
+            <TextInput style={styles.phoneInput} placeholder="Your number" placeholderTextColor={Themes.color7} textContentType="telephoneNumber" keyboardType="phone-pad" onChangeText={(text) => setPhone(text.trim())} value={phone} />
           </View>
           <LinearGradient colors={Themes.gradient1} style={styles.doneButton} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }}  >
           <TouchableOpacity style={styles.doneButton} onPress={perform} disabled={loading}>

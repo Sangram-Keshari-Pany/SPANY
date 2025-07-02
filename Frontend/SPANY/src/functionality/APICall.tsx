@@ -6,8 +6,9 @@ import RNSecureStorage from 'rn-secure-storage';
 import { domycategories, domyproducts, domysubCategories, flashSales } from "../assets/domyvalue/domyvalue";
 
 
-// export const  baseURL = 'https://spany-djapp.onrender.com/'
-export const baseURL = 'http://13.60.166.106'
+
+// export const baseURL = 'http://16.171.23.62/'
+export const baseURL = 'http://13.48.193.220/'
 
 export const SPANYaxios = axios.create({
     baseURL: baseURL,

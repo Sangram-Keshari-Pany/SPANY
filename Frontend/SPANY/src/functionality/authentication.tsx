@@ -17,9 +17,9 @@ async function savetoken(navigation: any, accessToken: string, refreshToken: str
     }
 }
 
-export async function userregistration(navigation: any, formData: any,fetchdata:Function) {    
+export async function userregistration(navigation: any, formData: any,fetchdata:Function) {  
     try {
-        const response = await axios.post(`${baseURL}/registration/`,formData,{headers: {'Content-Type': 'multipart/form-data'}})
+        const response = await axios.post(`${baseURL}registration/`,formData,{headers: {'Content-Type': 'multipart/form-data'}})
         if (response.status === 200 || response.status === 201) {
             const userData = response.data
             const accessToken = userData.access
