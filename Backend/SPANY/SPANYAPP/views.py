@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework.generics import ListAPIView,  UpdateAPIView, GenericAPIView,ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -16,6 +17,12 @@ from SPANYAPP.authentication_utils import RegistrationFunctionality,LoginFunctio
 from SPANYAPP.orders_utils import OrderItemsFunctionlity,DeleveryItemsFunctionality,ReviewItemsFuntionality,FavoriteItemsFunctionality
 
 
+# ##########################
+# HOME PAGE VIEWS
+# ##########################
+from SPANYAPP.home import lottie_animation_view
+def HomePage(request):
+    return lottie_animation_view(request)
 # ##########################
 # USER API VIEWS
 # ##########################

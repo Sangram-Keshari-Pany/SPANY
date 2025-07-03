@@ -30,6 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# AFTER DEPLOYMENT--------CSRF TOKEN VERIFICATION
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://13.60.77.61',
+#     'https://13.60.77.61',
+# ]
+
 
 # Application definition
 

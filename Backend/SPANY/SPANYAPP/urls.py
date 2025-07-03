@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
 from SPANYAPP.views import (
+    HomePage,
     RegistrationView, LoginView, CustomerFetchView,OtpVerificationView,ForgetPasswordView,
     CategoryView, SubCategoryView, ProductView, FlashShaleView,
     OrderItemsView, CartItemsView, DeliverItemsView, FavoritesView, 
@@ -8,6 +9,7 @@ from SPANYAPP.views import (
     )
 
 urlpatterns = [
+    path("",HomePage, name="HomePage"),
     # User Authentication Routes
     path("registration/", RegistrationView.as_view(), name="user-registration"),
     path("login/", LoginView.as_view(), name="user-login"),
