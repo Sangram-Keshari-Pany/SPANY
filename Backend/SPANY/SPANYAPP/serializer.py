@@ -75,11 +75,11 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = [
-            'id', 'product_name', 'price', 'discount', 'cost_price',
-            'minimum_order_quantity', 'size', 'color', 'material', 'brand',
-            'specification', 'rating', 'keyword', 'warranty', 'like',
-            'product_image1', 'product_image2', 'product_image3', 'product_image4', 'product_image5'
-        ]
+           "id","category","subcategory","product_name","product_image1","product_image2","product_image3","product_image4",
+            "product_image5","highlights","description","price","discount","cost_price","minimum_order_quantity","size",
+            "color","material","brand","specification","rating","keyword","warranty","like"
+                ]
+
 
     def get_product_image1(self, obj):
         if obj.product_image1:

@@ -164,5 +164,13 @@ EMAIL_HOST_PASSWORD = config('EMAILPASSWORD')
 EMAIL_PORT = 587  
 EMAIL_USE_TLS = True
 
-
+# JWT VALIDATION
+from datetime import timedelta
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+    }
 

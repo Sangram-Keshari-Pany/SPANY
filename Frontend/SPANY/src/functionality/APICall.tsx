@@ -8,7 +8,7 @@ import { domycategories, domyproducts, domysubCategories, flashSales } from "../
 
 
 // export const baseURL = 'http://16.171.23.62/'
-export const baseURL = 'http://13.60.77.61/'
+export const baseURL = 'http://13.60.183.181/'
 
 export const SPANYaxios = axios.create({
     baseURL: baseURL,
